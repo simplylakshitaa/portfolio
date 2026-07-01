@@ -1,0 +1,141 @@
+.achievements {
+  padding: 128px 24px;
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 56px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.card {
+  position: relative;
+  background: var(--bg-card, rgba(255,255,255,0.03));
+  border: 1px solid var(--border, rgba(255,255,255,0.06));
+  border-radius: 20px;
+  padding: 36px 32px;
+  text-align: center;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, var(--card-accent, var(--primary)), transparent 70%);
+  opacity: 0.04;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 79, 163, 0.25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35), 0 0 80px rgba(255, 79, 163, 0.05);
+}
+
+.card:hover::before {
+  opacity: 0.08;
+}
+
+.cardAccentLine {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--card-accent, var(--primary));
+  border-radius: 0 0 4px 4px;
+  opacity: 0.8;
+  transition: width 0.4s ease;
+}
+
+.card:hover .cardAccentLine {
+  width: 120px;
+}
+
+.iconWrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 3rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+}
+
+.iconGlow {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  background: var(--card-accent, var(--primary));
+  opacity: 0.08;
+  filter: blur(16px);
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--primary);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .achievements {
+    padding: 80px 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 28px 24px;
+  }
+}

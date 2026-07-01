@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Pac-Man body -->
+  <path d="M32 2 A30 30 0 1 1 32 62 A30 30 0 1 1 32 2 Z" fill="#FF4FA3"/>
+  <!-- Mouth cutout -->
+  <path d="M32 32 L62 16 L62 48 Z" fill="#08080A"/>
+  <!-- Eye -->
+  <circle cx="36" cy="18" r="4" fill="#08080A"/>
+  <!-- Eye highlight -->
+  <circle cx="37.5" cy="16.5" r="1.5" fill="#FAFAFA"/>
+</svg>
