@@ -1,28 +1,22 @@
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+
   server: {
     port: 5173,
     open: true,
   },
-  build: {
-    target: 'esnext',
-    sourcemap: false,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          three: ['three', '@react-three/fiber', '@react-three/drei', '@react-three/postprocessing'],
-          animation: ['framer-motion', 'gsap'],
-        },
-      },
-    },
-  },
+
   resolve: {
     alias: {
-      '@': '/src',
+      "@": "/src",
     },
+  },
+
+  build: {
+    target: "esnext",
+    sourcemap: false,
   },
 });
